@@ -1,3 +1,4 @@
+/*
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -40,3 +41,110 @@
 .read-the-docs {
   color: #888;
 }
+*/
+
+svg {
+    width: 400px;
+    height: 400px;
+
+    position: absolute;
+    left: 50px;
+    top: 50px;
+
+}
+
+.App {
+    width: 100%;
+    height: 100%;
+}
+
+.App__wrapper {
+    width: 100vw;
+    height: 100vh;
+}
+
+.App__image {
+    
+}
+
+.App__liquidGlass__wrapper {
+    width: 256px;
+    height: 256px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: none;
+    outline: none !important;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+
+    transition: transform 300ms ease-in-out;
+
+    --liquidGlass-bg: rgba(255, 255, 255, 0.4);
+    --liquidGlass-bg: linear-gradient(to bottom,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0)
+    );
+    --liquidGlass-border-width: 1px;
+    --liquidGlass-border-style: solid;
+    --liquidGlass-border-glare: red;
+    --liquidGlass-border-radius: 128px;
+    --liquidGlass-contour-glare-top: 0px 1px 1px 0px rgba(255,255,255,1) inset;
+    --liquidGlass-contour-glare-bottom: 0px -1px 1px 0px rgba(255,255,255,.8) inset;
+    --liquidGlass-inner-glare-top: 0px 16px 8px -8px rgba(255,255,255,0.4) inset;
+    --liquidGlass-inner-glare-bottom: 0px -8px 4px -4px rgba(255,255,255,0.3) inset;
+    --liquidGlass-inner-shadow: 0px -1px 0px 0px rgba(0,0,0,0.1) inset;
+    --liquidGlass-shadow: 8px 8px 32px 0px rgba(0,0,0,0.4);
+    --liquidGlass-backdrop:
+        blur(1px)
+        saturate(1.2)
+    ;
+}
+.App__liquidGlass__wrapper:active {
+    transform: scale(0.8) translate(-60%, -60%);
+}
+
+.App__liquidGlass__wrapper img {
+    z-index: 2;
+    position: relative;
+}
+
+.App__liquidGlass {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+
+    background: var(--liquidGlass-bg);
+    border-radius: var(--liquidGlass-border-radius);
+    box-shadow:
+        var(--liquidGlass-shadow),
+        var(--liquidGlass-inner-shadow),
+        var(--liquidGlass-inner-glare-top),
+        var(--liquidGlass-inner-glare-bottom),
+        var(--liquidGlass-contour-glare-top),
+        var(--liquidGlass-contour-glare-bottom)
+    ;
+
+    backdrop-filter: var(--liquidGlass-backdrop);
+    -webkit-backdrop-filter: var(--liquidGlass-backdrop);
+}
+
+.App__liquidGlass-backdrop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+
+    backdrop-filter: url('#glass');
+    border-radius: var(--liquidGlass-border-radius);
+}
+
