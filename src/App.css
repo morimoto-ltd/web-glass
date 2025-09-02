@@ -43,6 +43,7 @@
 }
 */
 
+/*
 svg {
     width: 400px;
     height: 400px;
@@ -52,6 +53,7 @@ svg {
     top: 50px;
 
 }
+*/
 
 .App {
     width: 100%;
@@ -67,6 +69,7 @@ svg {
     
 }
 
+/*
 .App__liquidGlass__wrapper {
     width: 256px;
     height: 256px;
@@ -131,9 +134,6 @@ svg {
         var(--liquidGlass-contour-glare-top),
         var(--liquidGlass-contour-glare-bottom)
     ;
-
-    backdrop-filter: var(--liquidGlass-backdrop);
-    -webkit-backdrop-filter: var(--liquidGlass-backdrop);
 }
 
 .App__liquidGlass-backdrop {
@@ -145,6 +145,5 @@ svg {
     z-index: -1;
 
     backdrop-filter: url('#glass');
-    border-radius: var(--liquidGlass-border-radius);
 }
-
+*/
