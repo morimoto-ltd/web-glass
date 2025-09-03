@@ -1,0 +1,78 @@
+.LiquidGlassBox {
+    position: relative;
+
+    width: var(--width);
+    height: var(--height);
+    box-sizing: border-box;
+
+    border-radius: var(--bRadius);
+
+    /* temp */
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    /**/
+}
+
+.LiquidGlassBox__lighing {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: var(--bRadius);
+    overflow: hidden;
+}
+
+.LiquidGlassBox__lighing__light {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    
+    border: calc(var(--zRadius) / 2) solid rgb(255, 255, 255, 1);
+    border-radius: var(--bRadius);
+    border-right: none;
+    border-bottom: none;
+
+    filter: blur(var(--zRadius));
+}
+.LiquidGlassBox__lighing__shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    
+    border: calc(var(--zRadius) / 2) solid rgb(0, 0, 0, 0.6);
+    border-radius: var(--bRadius);
+    border-top: none;
+    border-left: none;
+
+    filter: blur(var(--zRadius));
+}
+
+
+.LiquidGlassBox__filter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    border-radius: var(--bRadius);
+
+    backdrop-filter: var(--filter) blur(1px) saturate(1.2) contrast(1.1);
+    -webkit-backdrop-filter: var(--filter) blur(1px) saturate(1.2) contrast(1.1);
+}
+
+.LiquidGlassBox__shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    border: var(--zRadius) solid rgba(0, 0, 0, 0.4);
+    border-radius: var(--bRadius);
+
+    filter: blur(var(--zRadius));
+    transform: translate(10px, 20px);
+}

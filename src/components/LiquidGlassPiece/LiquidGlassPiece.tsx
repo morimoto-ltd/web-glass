@@ -1,7 +1,7 @@
 import { useLayoutEffect, type ReactNode } from 'react';
 import { createFilter } from '../../tools/createLiquidGlassFilter';
 
-// import './LiquidGlassPiece.scss';
+import './LiquidGlassPiece.css';
 
 export type LiquidGlassBoxProps = {
     id: string,
@@ -30,23 +30,24 @@ export function LiquidGlassPiece({
         <div
             className="LiquidGlassBox"
             style={{
-                /* temp */
-                position: 'absolute',
-                top: '50px',
-                left: '50px',
-                /**/
-
-                width: `${width}px`,
-                height: `${height}px`,
-                borderRadius: `${borderRadius}px`,
-                backdropFilter: `url('#${id}')`,
-                '-webkit-backdrop-filter': `url('#${id}')`,
+                '--width': `${width}px`,
+                '--height': `${height}px`,
+                '--bRadius': `${borderRadius}px`,
+                '--zRadius': `${zRadius}px`,
+                '--filter': `url('#${id}')`,
             }}
         >
-            {children}
+            <div className="LiquidGlassBox__shadow" />
+            <div className="LiquidGlassBox__filter" />
 
-            <div className="LiquidGlassBox__box"/>
-            <div className="LiquidGlassBox__filter"/>
+            <div className="LiquidGlassBox__wrapper">
+                {children}
+            </div>
+
+            <div className="LiquidGlassBox__lighing" inert>
+                <div className="LiquidGlassBox__lighing__light" />
+                <div className="LiquidGlassBox__lighing__shadow" />
+            </div>
         </div>
     );
 }

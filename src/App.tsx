@@ -7,7 +7,7 @@ function App() {
 
     return (
         <section role="main" className="App">
-            <div className="App__wrapper">
+            <div className="App__wrapper" style={{ background: 'lightgray' }}>
                 <img
                     className="App__background"
                     src="https://images.unsplash.com/photo-1756680967174-c0e19cf94f49?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
