@@ -21,6 +21,7 @@
     box-sizing: border-box;
     border-radius: var(--bRadius);
     overflow: hidden;
+
 }
 
 .LiquidGlassBox__lighing__light {
@@ -29,12 +30,12 @@
     height: 100%;
     box-sizing: border-box;
     
-    border: calc(var(--zRadius) / 2) solid rgb(255, 255, 255, 1);
+    border: 1px solid rgb(255, 255, 255, 0.7);
     border-radius: var(--bRadius);
     border-right: none;
     border-bottom: none;
 
-    filter: blur(var(--zRadius));
+    box-shadow: inset var(--zRadius) var(--zRadius) var(--zRadius) rgb(255, 255, 255, 0.15);
 }
 .LiquidGlassBox__lighing__shadow {
     position: absolute;
@@ -42,14 +43,13 @@
     height: 100%;
     box-sizing: border-box;
     
-    border: calc(var(--zRadius) / 2) solid rgb(0, 0, 0, 0.6);
+    border: 1px solid rgb(0, 0, 0, 0.3);
     border-radius: var(--bRadius);
     border-top: none;
     border-left: none;
 
-    filter: blur(var(--zRadius));
+    box-shadow: inset calc(var(--zRadius) * -1) calc(var(--zRadius) * -1) var(--zRadius) rgb(0, 0, 0, 0.15);
 }
-
 
 .LiquidGlassBox__filter {
     position: absolute;
@@ -70,7 +70,7 @@
     height: 100%;
     box-sizing: border-box;
 
-    border: var(--zRadius) solid rgba(0, 0, 0, 0.4);
+    border: var(--zRadius) solid rgba(0, 0, 0, 0.3);
     border-radius: var(--bRadius);
 
     filter: blur(var(--zRadius));
