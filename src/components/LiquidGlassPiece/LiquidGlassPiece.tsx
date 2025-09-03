@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import { useLayoutEffect, type ReactNode } from 'react';
 import { createFilter } from '../../tools/createLiquidGlassFilter';
 
@@ -9,6 +11,7 @@ export type LiquidGlassBoxProps = {
     height: number,
     borderRadius: number,
     zRadius: number,
+    className?: string,
     children: ReactNode,
 }
 
@@ -18,6 +21,7 @@ export function LiquidGlassPiece({
     height,
     borderRadius,
     zRadius,
+    className,
     children,
 }: LiquidGlassBoxProps) {
     // TODO dynamic width/height
@@ -28,7 +32,7 @@ export function LiquidGlassPiece({
 
     return (
         <div
-            className="LiquidGlassBox"
+            className={clsx('LiquidGlassBox', className)}
             style={{
                 '--width': `${width}px`,
                 '--height': `${height}px`,

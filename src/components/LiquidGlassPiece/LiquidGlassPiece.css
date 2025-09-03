@@ -6,12 +6,6 @@
     box-sizing: border-box;
 
     border-radius: var(--bRadius);
-
-    /* temp */
-    position: fixed;
-    top: 50px;
-    left: 50px;
-    /**/
 }
 
 .LiquidGlassBox__lighing {
@@ -30,7 +24,7 @@
     height: 100%;
     box-sizing: border-box;
     
-    border: 1px solid rgb(255, 255, 255, 0.7);
+    border: 1px solid rgb(255, 255, 255, 0.5);
     border-radius: var(--bRadius);
     border-right: none;
     border-bottom: none;

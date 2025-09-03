@@ -13,15 +13,40 @@ function App() {
                     src="https://images.unsplash.com/photo-1756680967174-c0e19cf94f49?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 />
 
-                <LiquidGlassPiece
-                    id="test"
-                    width={400}
-                    height={400}
-                    borderRadius={20}
-                    zRadius={15}
-                >
-                    <div />
-                </LiquidGlassPiece>
+                <div className="App__test">
+                    <LiquidGlassPiece
+                        id="test1"
+                        className="App__test__1"
+                        width={48}
+                        height={48}
+                        borderRadius={24}
+                        zRadius={3}
+                    >
+                        <div />
+                    </LiquidGlassPiece>
+
+                    <LiquidGlassPiece
+                        id="test2"
+                        className="App__test__2"
+                        width={124}
+                        height={48}
+                        borderRadius={24}
+                        zRadius={3}
+                    >
+                        <div />
+                    </LiquidGlassPiece>
+
+                    <LiquidGlassPiece
+                        id="test3"
+                        className="App__test__3"
+                        width={200}
+                        height={150}
+                        borderRadius={32}
+                        zRadius={8}
+                    >
+                        <div />
+                    </LiquidGlassPiece>
+                </div>
             </div>
         </section>
     );
