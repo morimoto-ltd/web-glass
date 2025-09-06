@@ -1,12 +1,20 @@
-import { getLiquidGlassUV } from "./getLiquidGlassUV";
+import { getUV } from "./getUV";
 
 const NS = 'http://www.w3.org/2000/svg';
 
-export function createFilter(
+type FilterSharedData = {
+    refsCount: number,
+    timeout: number | null,
+    svg: SVGElement,
+};
+
+const filters: Map<string, FilterSharedData> = new Map();
+
+function createFilter(
     id: string,
     width: number, height: number,
     borderRadius: number, zRadius: number,
-) {
+): SVGElement {
     const svg = document.createElementNS(NS, 'svg');
     const filter = document.createElementNS(NS, 'filter')
     const feImage = document.createElementNS(NS, 'feImage');
@@ -20,7 +28,7 @@ export function createFilter(
     feImage.setAttribute('y', `0`);
     feImage.setAttribute('width', `1`);
     feImage.setAttribute('height', `1`);
-    feImage.setAttribute('href', getLiquidGlassUV(width, height, borderRadius, zRadius));
+    feImage.setAttribute('href', getUV(width, height, borderRadius, zRadius));
 
     feDisplacementMap.setAttribute('in', 'SourceGraphic');
     feDisplacementMap.setAttribute('in2', 'uv');
@@ -35,7 +43,34 @@ export function createFilter(
 
     document.body.appendChild(svg);
 
-    return function removeFilter() {
-        svg.remove();
+    return svg;
+}
+
+export function getFilter(
+    id: string,
+    width: number, height: number,
+    borderRadius: number, zRadius: number,
+): () => void {
+    let filterSharedData = filters.get(id);
+    if (!filterSharedData) {
+        filterSharedData = {
+            refsCount: 1,
+            timeout: null,
+            svg: createFilter(id, width, height, borderRadius, zRadius),
+        };
+    } else {
+        filterSharedData.refsCount += 1;
     }
+
+    return function removeFilter() {
+        filterSharedData.refsCount -= 1;
+        if (!filterSharedData.timeout) {
+            filterSharedData.timeout = setTimeout(() => {
+                if (filterSharedData.refsCount === 0) {
+                    filterSharedData.svg.remove();
+                    filters.delete(id);
+                }
+            }, 100);
+        }
+    };
 }

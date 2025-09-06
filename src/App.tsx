@@ -1,10 +1,8 @@
-import './App.css'
 import { LiquidGlassPiece } from './components/LiquidGlassPiece/LiquidGlassPiece';
-import { getLiquidGlassUV } from './tools/getLiquidGlassUV';
+
+import './App.css'
 
 function App() {
-    getLiquidGlassUV(1000, 1000, 100, 50);
-
     return (
         <section role="main" className="App">
             <div className="App__wrapper" style={{ background: 'lightgray' }}>
@@ -15,7 +13,6 @@ function App() {
 
                 <div className="App__test">
                     <LiquidGlassPiece
-                        id="test1"
                         className="App__test__1"
                         width={48}
                         height={48}
@@ -26,7 +23,6 @@ function App() {
                     </LiquidGlassPiece>
 
                     <LiquidGlassPiece
-                        id="test2"
                         className="App__test__2"
                         width={124}
                         height={48}
@@ -37,7 +33,6 @@ function App() {
                     </LiquidGlassPiece>
 
                     <LiquidGlassPiece
-                        id="test3"
                         className="App__test__3"
                         width={200}
                         height={150}

@@ -44,7 +44,7 @@ function drawNeutralZone(
     ctx.fill();
 }
 
-export function getLiquidGlassUV(
+export function getUV(
     width: number, height: number,
     borderRadius: number, zRadius: number,
 ): string {
