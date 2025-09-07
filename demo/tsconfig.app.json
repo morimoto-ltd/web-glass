@@ -7,9 +7,9 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "paths": {
-      "web-liquid-glass": "./src",
-      "components": "./demo/components",
-      "assests": "./demo/assests",
+      "web-liquid-glass": ["../src"],
+      "components": ["./components"],
+      "assests": ["./assests"],
     },
 
     /* Bundler mode */
@@ -28,5 +28,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "demo", "demo/*"]
+  "include": ["components", "assests", "pages/**/*"]
 }

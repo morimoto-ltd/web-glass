@@ -1,5 +1,3 @@
-import clsx from 'clsx';
-
 import { useLayoutEffect, useMemo, type CSSProperties, type ReactNode } from 'react';
 import { getReusableId } from '../../tools/getReusableId';
 import { getFilter } from '../../tools/getFilter';
@@ -36,7 +34,7 @@ export function LiquidGlassPiece({
 
     return (
         <div
-            className={clsx('LiquidGlassPiece', className)}
+            className={`LiquidGlassPiece ${className}`}
             style={{
                 '--width': `${width}px`,
                 '--height': `${height}px`,
@@ -45,16 +43,16 @@ export function LiquidGlassPiece({
                 '--filter': `url('#${id}')`,
             } as CSSProperties}
         >
-            <div className={clsx('LiquidGlassPiece-layer', 'LiquidGlassPiece__shadow')} />
-            <div className={clsx('LiquidGlassPiece-layer', 'LiquidGlassPiece__filter')} />
+            <div className="LiquidGlassPiece-layer LiquidGlassPiece__shadow" inert/>
+            <div className="LiquidGlassPiece-layer LiquidGlassPiece__filter" inert/>
 
-            <div className="LiquidGlassPiece__wrapper">
+            <div className="LiquidGlassPiece-layer LiquidGlassPiece__wrapper">
                 {children}
             </div>
 
-            <div className={clsx('LiquidGlassPiece-layer', 'LiquidGlassPiece__lighing')} inert>
-                <div className={clsx('LiquidGlassPiece-layer', 'LiquidGlassPiece__lighing__light')} />
-                <div className={clsx('LiquidGlassPiece-layer', 'LiquidGlassPiece__lighing__shadow')} />
+            <div className="LiquidGlassPiece-layer LiquidGlassPiece__lighing" inert>
+                <div className="LiquidGlassPiece-layer LiquidGlassPiece__lighing__light" />
+                <div className="LiquidGlassPiece-layer LiquidGlassPiece__lighing__shadow" />
             </div>
         </div>
     );
