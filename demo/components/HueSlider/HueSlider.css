@@ -1,0 +1,21 @@
+.HueSlider {}
+
+.HueSlider__hueTrack {
+    width: 100%;
+    height: 32px;
+
+    border-radius: 16px;
+    background: linear-gradient(to right,
+        rgb(29, 177, 231),
+        rgb(44, 126, 202),
+        rgb(66, 70, 157),
+        rgb(148, 52, 151),
+        rgb(216, 55, 163),
+        rgb(234, 54, 112), 
+        rgb(223, 55, 72),
+        rgb(241, 139, 74),
+        rgb(238, 200, 76),
+        rgb(207, 233, 81),
+        rgb(97, 213, 86)
+    );
+}

@@ -10,7 +10,7 @@ export type LiquidGlassPieceProps = {
     borderRadius: number,
     zRadius: number,
     className?: string,
-    children: ReactNode,
+    children?: ReactNode,
 }
 
 export function LiquidGlassPiece({
