@@ -59,7 +59,7 @@
 }
 
 .LiquidGlassPiece__shadow {
-    filter: blur(var(--shadow-blur, var(--zRadius)));
+    filter: blur(var(--drop-shadow-blur, var(--zRadius)));
     border:
         var(--drop-shadow-thickness, var(--zRadius))
         solid
