@@ -23,30 +23,49 @@
 }
 
 .LiquidGlassPiece__lighing__light {
-    border: 1px solid rgb(255, 255, 255, 0.5);
-    border-right: none;
-    border-bottom: none;
-
-    box-shadow: inset var(--zRadius) var(--zRadius) var(--zRadius) rgb(255, 255, 255, 0.15);
+    box-shadow: inset
+        var(--inset-light-offset-x, calc(var(--zRadius)))
+        var(--inset-light-offset-y, calc(var(--zRadius)))
+        var(--inset-light-blur, var(--zRadius))
+        var(--inset-light-thickness, 0px)
+        var(--inset-light-color, rgb(255, 255, 255, .4))
+    ;
 }
 .LiquidGlassPiece__lighing__shadow {
-    border: 1px solid rgb(0, 0, 0, 0.3);
-    border-top: none;
-    border-left: none;
-
-    box-shadow: inset calc(var(--zRadius) * -1) calc(var(--zRadius) * -1) var(--zRadius) rgb(0, 0, 0, 0.15);
+    box-shadow: inset
+        var(--inset-shadow-offset-x, 0)
+        var(--inset-shadow-offset-y, 0)
+        var(--inset-shadow-blur, var(--zRadius))
+        var(--inset-shadow-thickness, 1px)
+        var(--inset-shadow-color, rgb(0, 0, 0, .2))
+    ;
 }
 
 .LiquidGlassPiece__filter {
     overflow: hidden;
 
-    backdrop-filter: var(--filter) blur(1px) saturate(1.2) contrast(1.1);
-    -webkit-backdrop-filter: var(--filter) blur(1px) saturate(1.2) contrast(1.1);
+    backdrop-filter:
+        var(--filter)
+        blur(var(--blur, 1px))
+        saturate(var(--saturation, 1.2))
+        contrast(var(--contrast, 1.1))
+    ;
+    -webkit-backdrop-filter:
+        var(--filter)
+        blur(var(--blur, 1px))
+        saturate(var(--saturation, 1.2))
+        contrast(var(--contrast, 1.1))
+    ;
 }
 
 .LiquidGlassPiece__shadow {
-    border: var(--zRadius) solid rgba(0, 0, 0, 0.3);
-
-    filter: blur(var(--zRadius));
-    transform: translate(10px, 20px);
+    filter: blur(var(--shadow-blur, var(--zRadius)));
+    border:
+        var(--drop-shadow-thickness, var(--zRadius))
+        solid
+        var(--drop-shadow-color, rgb(0, 0, 0, .3));
+    transform: translate(
+        var(--drop-shadow-offset-x, 0px),
+        var(--drop-shadow-offset-y, 15px)
+    );
 }
