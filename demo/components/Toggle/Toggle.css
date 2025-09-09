@@ -1,0 +1,35 @@
+.Toggle {
+    width: 92px;
+    height: 60px;
+    padding: 6px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.Toggle__handle {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Toggle-off .Toggle__handle {
+    left: 35px;
+}
+
+.Toggle-on .Toggle__handle {
+    left: calc(100% - 35px);
+}
+
+.Toggle__track {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
+.Toggle-off .Toggle__track {
+    background: gray;
+}
+
+.Toggle-on .Toggle__track {
+    background: rgb(89, 185, 93);
+}
