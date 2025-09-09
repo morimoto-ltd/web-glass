@@ -34,7 +34,7 @@ function drawNeutralZone(
     ctx.globalCompositeOperation = 'source-over';
 
     ctx.filter = `blur(${zRadius}px)`;
-    ctx.fillStyle = toCSSColor(128, 128, 0, 1);
+    ctx.fillStyle = toCSSColor(139, 139, 0, 1); // TODO figure out why not centered at 128
     ctx.beginPath();
     ctx.roundRect(
         zRadius, zRadius,

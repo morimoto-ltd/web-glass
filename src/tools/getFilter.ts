@@ -32,7 +32,7 @@ function createFilter(
 
     feDisplacementMap.setAttribute('in', 'SourceGraphic');
     feDisplacementMap.setAttribute('in2', 'uv');
-    feDisplacementMap.setAttribute('scale', '0.8');
+    feDisplacementMap.setAttribute('scale', '0.7');
     feDisplacementMap.setAttribute('xChannelSelector', 'R');
     feDisplacementMap.setAttribute('yChannelSelector', 'G');
     feDisplacementMap.setAttribute('style', 'color-interpolation-filters: sRGB;');
