@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { LiquidGlassPiece } from 'web-liquid-glass';
 
 import { RoundButton } from 'components/RoundButton/RoundButton';
 import { Slider } from 'components/Slider/Slider';
@@ -20,18 +21,37 @@ function DemoToggle() {
     );
 }
 
+function DemoGlass() {
+    return (
+        <LiquidGlassPiece
+            width={200}
+            height={200}
+            borderRadius={32}
+            zRadius={3}
+        />
+    );
+}
+
 export default function App() {
     return (
         <section role="main" className="App">
-            <RoundButton>
-                <span>+</span>
-            </RoundButton>
+            <div>
+                <DemoGlass />
 
-            <Slider fixedWidth={300} />
+                <DemoToggle />
 
-            <HueSlider fixedWidth={300} />
+                <HueSlider fixedWidth={300} />
+            </div>
 
-            <DemoToggle />
+            <div>
+                <Slider fixedWidth={300} />
+
+                <RoundButton>
+                    <span>+</span>
+                </RoundButton>
+
+                <DemoGlass />
+            </div>
         </section>
     );
 }

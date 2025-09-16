@@ -2,8 +2,8 @@
     --halfHandleWidth: calc(var(--handleWidth) / 2);
     --halfHandleHeight: calc(var(--handleHeight) / 2);
 
-    padding: var(--halfHandleHeight) var(--halfHandleWidth);
     width: var(--fixedWidth);
+    height: min-content;
     position: relative;
 }
 
@@ -21,13 +21,7 @@
 }
 
 @keyframes move {
-    0% {
-        left: calc(0% + var(--halfHandleWidth));
-    }
-    50% {
-        left: calc(100% - var(--halfHandleWidth));
-    }
-    100% {
-        left: calc(0% + var(--halfHandleWidth));
-    }
+    0%  { left: 0%; }
+    50%  { left: 100%; }
+    100%  { left: 0%; }
 }

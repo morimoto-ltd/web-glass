@@ -16,7 +16,7 @@ export function RoundButton({
     width = 64,
     height = 64,
     borderRadius = 32,
-    zRadius = 8,
+    zRadius = 3,
     className,
     children,
 }: RoundButtonProps) {
