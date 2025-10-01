@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { LiquidGlassPiece } from 'web-liquid-glass';
 
+import { Movable } from 'components/Movable/Movable';
 import { RoundButton } from 'components/RoundButton/RoundButton';
 import { Slider } from 'components/Slider/Slider';
 import { HueSlider } from 'components/HueSlider/HueSlider';
@@ -23,12 +24,14 @@ function DemoToggle() {
 
 function DemoGlass() {
     return (
-        <LiquidGlassPiece
-            width={200}
-            height={200}
-            borderRadius={32}
-            zRadius={3}
-        />
+        <Movable>
+            <LiquidGlassPiece
+                width={200}
+                height={200}
+                borderRadius={32}
+                zRadius={3}
+            />
+        </Movable>
     );
 }
 
