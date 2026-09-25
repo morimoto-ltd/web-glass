@@ -51,8 +51,8 @@ export function LiquidGlassPiece({
             </div>
 
             <div className="LiquidGlassPiece-layer LiquidGlassPiece__lighing" inert>
-                <div className="LiquidGlassPiece-layer LiquidGlassPiece__lighing__light" />
-                <div className="LiquidGlassPiece-layer LiquidGlassPiece__lighing__shadow" />
+                <div className="LiquidGlassPiece-layer LiquidGlassPiece__lighing__top" />
+                <div className="LiquidGlassPiece-layer LiquidGlassPiece__lighing__bottom" />
             </div>
         </div>
     );

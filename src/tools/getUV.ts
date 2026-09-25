@@ -6,20 +6,20 @@ function toCSSColor(r: number, g: number, b: number, a: number = 1) {
 }
 
 function drawEvenUV(ctx: CanvasRenderingContext2D, width: number, height: number) {
-    ctx.globalCompositeOperation = 'lighter'
+    ctx.globalCompositeOperation = 'lighter';
 
     ctx.fillStyle = toCSSColor(0, 0, 0);
     ctx.fillRect(0, 0, width, height);
 
     const xGrad = ctx.createLinearGradient(0, 0, width, 0);
     xGrad.addColorStop(0, toCSSColor(255, 0, 0, 1));
-    xGrad.addColorStop(1, toCSSColor(255, 0, 0, 0));
+    xGrad.addColorStop(1, toCSSColor(0,   0, 0, 1));
     ctx.fillStyle = xGrad;
     ctx.fillRect(0, 0, width, height);
 
     const yGrad = ctx.createLinearGradient(0, 0, 0, height);
     yGrad.addColorStop(0, toCSSColor(0, 255, 0, 1));
-    yGrad.addColorStop(1, toCSSColor(0, 255, 0, 0));
+    yGrad.addColorStop(1, toCSSColor(0, 0,   0, 1));
     ctx.fillStyle = yGrad;
     ctx.fillRect(0, 0, width, height);
 }
@@ -34,7 +34,7 @@ function drawNeutralZone(
     ctx.globalCompositeOperation = 'source-over';
 
     ctx.filter = `blur(${zRadius}px)`;
-    ctx.fillStyle = toCSSColor(139, 139, 0, 1); // TODO figure out why not centered at 128
+    ctx.fillStyle = toCSSColor(128, 128, 0, 1);
     ctx.beginPath();
     ctx.roundRect(
         zRadius, zRadius,
