@@ -20,6 +20,8 @@ function createFilter(
     const feImage = document.createElementNS(NS, 'feImage');
     const feDisplacementMap = document.createElementNS(NS, 'feDisplacementMap');
 
+    const feConvolveMatrix = document.createElementNS(NS, 'feConvolveMatrix');
+
     filter.setAttribute('id', id);
     filter.setAttribute('primitiveUnits', 'objectBoundingBox');
 
@@ -32,14 +34,25 @@ function createFilter(
 
     feDisplacementMap.setAttribute('in', 'SourceGraphic');
     feDisplacementMap.setAttribute('in2', 'uv');
+    feDisplacementMap.setAttribute('result', 'displaced');
     feDisplacementMap.setAttribute('scale', '0.7');
     feDisplacementMap.setAttribute('xChannelSelector', 'R');
     feDisplacementMap.setAttribute('yChannelSelector', 'G');
     feDisplacementMap.setAttribute('style', 'color-interpolation-filters: sRGB;');
 
+    // TODO make optional
+    feConvolveMatrix.setAttribute('in', 'displaced');
+    feConvolveMatrix.setAttribute('order', '3');
+    feConvolveMatrix.setAttribute('kernelMatrix', '0 1 0 1 4 1 0 1 0');
+    feConvolveMatrix.setAttribute('divisor', '8');
+    feConvolveMatrix.setAttribute('bias', '0');
+    feConvolveMatrix.setAttribute('edgeMode', 'none');
+    feConvolveMatrix.setAttribute('preserveAlpha', 'true');
+
     svg.appendChild(filter);
     filter.appendChild(feImage);
     filter.appendChild(feDisplacementMap);
+    filter.appendChild(feConvolveMatrix);
 
     document.body.appendChild(svg);
 
