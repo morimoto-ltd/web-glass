@@ -36,11 +36,11 @@ export function LiquidGlassPiece({
         <div
             className={`LiquidGlassPiece ${className}`}
             style={{
-                '--width': `${width}px`,
-                '--height': `${height}px`,
-                '--borderRadius': `${borderRadius}px`,
-                '--zRadius': `${zRadius}px`,
-                '--filter': `url('#${id}')`,
+                '--readonly-lg-width': `${width}px`,
+                '--readonly-lg-height': `${height}px`,
+                '--readonly-lg-borderRadius': `${borderRadius}px`,
+                '--readonly-lg-zRadius': `${zRadius}px`,
+                '--readonly-lg-filter': `url('#${id}')`,
             } as CSSProperties}
         >
             <div className="LiquidGlassPiece-layer LiquidGlassPiece__shadow" inert/>

@@ -1,11 +1,11 @@
 .LiquidGlassPiece {
     position: relative;
 
-    width: var(--width);
-    height: var(--height);
+    width: var(--readonly-lg-width);
+    height: var(--readonly-lg-height);
     box-sizing: border-box;
 
-    border-radius: var(--borderRadius);
+    border-radius: var(--readonly-lg-borderRadius);
 }
 
 .LiquidGlassPiece-layer {
@@ -15,37 +15,37 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    border-radius: var(--borderRadius);
+    border-radius: var(--readonly-lg-borderRadius);
 }
 
 .LiquidGlassPiece__lighing {
     overflow: hidden;
     box-shadow:
     /* TODO: update vars */
-        var(--inset-light-offset-x, 0px)
-        var(--inset-light-offset-y, 0px)
-        var(--inset-light-blur, 0px)
-        var(--inset-light-thickness, 1px)
-        var(--inset-light-color, rgb(0, 0, 0, .05))
+        var(--lg-inset-light-offset-x, 0px)
+        var(--lg-inset-light-offset-y, 0px)
+        var(--lg-inset-light-blur, 0px)
+        var(--lg-inset-light-thickness, 1px)
+        var(--lg-inset-light-color, rgb(0, 0, 0, .05))
     ;
 }
 
 .LiquidGlassPiece__lighing__top {
     box-shadow: inset
-        var(--inset-light-offset-x, 0px)
-        var(--inset-light-offset-y, 1px)
-        var(--inset-light-blur, var(--zRadius))
-        var(--inset-light-thickness, 0px)
-        var(--inset-light-color, rgb(255, 255, 255, .4))
+        var(--lg-inset-light-offset-x, 0px)
+        var(--lg-inset-light-offset-y, 1px)
+        var(--lg-inset-light-blur, var(--readonly-lg-zRadius))
+        var(--lg-inset-light-thickness, 0px)
+        var(--lg-inset-light-color, rgb(255, 255, 255, .4))
     ;
 }
 .LiquidGlassPiece__lighing__bottom {
     box-shadow: inset
-        var(--inset-light-offset-x, 0px)
-        var(--inset-light-offset-y, -1px)
-        var(--inset-light-blur, calc(var(--zRadius) / 2))
-        var(--inset-light-thickness, 0px)
-        var(--inset-light-color, rgb(255, 255, 255, .4))
+        var(--lg-inset-light-offset-x, 0px)
+        var(--lg-inset-light-offset-y, -1px)
+        var(--lg-inset-light-blur, calc(var(--readonly-lg-zRadius) / 2))
+        var(--lg-inset-light-thickness, 0px)
+        var(--lg-inset-light-color, rgb(255, 255, 255, .4))
     ;
 }
 
@@ -53,31 +53,37 @@
     overflow: hidden;
 
     backdrop-filter:
-        var(--filter)
-        blur(var(--blur, 0px))
-        saturate(var(--saturation, 1.2))
-        contrast(var(--contrast, 1.1))
+        var(--readonly-lg-filter)
+        blur(var(--lg-blur, 0px))
+        saturate(var(--lg-saturation, 1.2))
+        contrast(var(--lg-contrast, 1.1))
     ;
     -webkit-backdrop-filter:
-        var(--filter)
-        blur(var(--blur, 0px))
-        saturate(var(--saturation, 1.2))
-        contrast(var(--contrast, 1.1))
+        var(--readonly-lg-filter)
+        blur(var(--lg-blur, 0px))
+        saturate(var(--lg-saturation, 1.2))
+        contrast(var(--lg-contrast, 1.1))
     ;
 }
 
 .LiquidGlassPiece__shadow {
-    filter: blur(var(--drop-shadow-blur, var(--zRadius)));
-    border-style: solid;
-    border-width: var(--drop-shadow-thickness, var(--zRadius));
-    border-color:
-        var(--drop-shadow-in-color, rgb(0, 0, 0, .1))
-        var(--drop-shadow-out-color,  rgb(0, 0, 0, .3))
-        var(--drop-shadow-out-color,  rgb(0, 0, 0, .3))
-        var(--drop-shadow-in-color, rgb(0, 0, 0, .1))
-    ;
+    filter: blur(var(--lg-drop-shadow-blur, var(--readonly-lg-zRadius)));
     transform: translate(
-        var(--drop-shadow-offset-x, 4px),
-        var(--drop-shadow-offset-y, 10px)
+        var(--lg-drop-shadow-offset-x, 4px),
+        var(--lg-drop-shadow-offset-y, 10px)
     );
+
+    border-style: solid;
+    border-width:
+        var(--lg-drop-shadow-top-thickness, var(--lg-drop-shadow-thickness, var(--readonly-lg-zRadius)))
+        var(--lg-drop-shadow-right-thickness, var(--lg-drop-shadow-thickness, var(--readonly-lg-zRadius)))
+        var(--lg-drop-shadow-bottom-thickness, var(--lg-drop-shadow-thickness, var(--readonly-lg-zRadius)))
+        var(--lg-drop-shadow-left-thickness, var(--lg-drop-shadow-thickness, var(--readonly-lg-zRadius)))
+    ;
+    border-color:
+        var(--lg-drop-shadow-top-color, rgb(0, 0, 0, .1))
+        var(--lg-drop-shadow-right-color, rgb(0, 0, 0, .3))
+        var(--lg-drop-shadow-bottom-color, rgb(0, 0, 0, .3))
+        var(--lg-drop-shadow-left-color,  rgb(0, 0, 0, .1))
+    ;
 }
